@@ -50,13 +50,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device:  /home/lsomrat/data/wordpress
+      device:  /Users/mac/data/wordpress
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/lsomrat/data/mariadb
+      device: /Users/mac/data/mariadb
 
 networks:
   network:

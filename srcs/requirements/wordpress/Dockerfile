@@ -1,5 +1,5 @@
 FROM    debian:bullseye
-RUN     apt update && apt upgrade
+RUN     apt update && apt upgrade -y
 
 #set wordpresss
 RUN     apt-get install php php-mysql php-fpm mariadb-client wget -y
@@ -14,7 +14,9 @@ RUN		wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.p
 		&& chmod +x wp-cli.phar\
 		&& mv wp-cli.phar /usr/local/bin/wp
 RUN     chmod +x /home/wordpress.sh
-
-ENTRYPOINT [./home/wordpress.sh]
+RUN     service php7.4-fpm start
+ENTRYPOINT ["/home/wordpress.sh"]
 
 CMD	[ "/usr/sbin/php-fpm7.4", "-F" ]
+
+# CMD	[ "tail", "-f" ]
