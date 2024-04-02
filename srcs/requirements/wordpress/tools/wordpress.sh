@@ -18,11 +18,10 @@ then
 		--admin_user=${ADMIN_USER}\
 		--admin_password=${ADMIN_PASS} \
 		--admin_email=${ADMIN_EMAIL} --allow-root
-	# wp user create ${USER_USER} ${USER_EMAIL} --user_pass=${USER_PASS} --allow-root
-	wp user create aporlo \
-		12345@gmail.com \
-		--user_pass=12345678 \
-		--display_name=aporlo \
+	
+	wp user create ${USER_USER} \
+		${USER_EMAIL} \
+		--user_pass=${USER_PASS} \
 		--allow-root
 fi
 
