@@ -18,5 +18,3 @@ RUN     service php7.4-fpm start
 ENTRYPOINT ["/home/wordpress.sh"]
 
 CMD	[ "/usr/sbin/php-fpm7.4", "-F" ]
-
-# CMD	[ "tail", "-f" ]

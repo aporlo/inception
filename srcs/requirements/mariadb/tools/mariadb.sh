@@ -5,7 +5,7 @@ service mariadb start
 if [ ! -d "/var/lib/mysql/wordpress_db" ]
 then
     # Secure Databases
-    echo -e "\ny\ny\n`123456`\n`123456`\ny\ny\ny\ny\n" | mysql_secure_installation
+    echo -e "\ny\ny\n${DB_ROOT}\n${DB_ROOT}\ny\ny\ny\ny\n" | mysql_secure_installation
 
     # Init Databases
     mariadb -e "CREATE DATABASE IF NOT EXISTS \`${DB_NAME}\`;"
